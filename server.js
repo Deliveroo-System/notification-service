@@ -1,8 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // import cors package
 const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
+
+// Enable CORS
+app.use(cors()); // Allow all origins by default
+
 app.use(bodyParser.json());
 
 app.use('/api/notifications', notificationRoutes);
