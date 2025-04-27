@@ -49,4 +49,4 @@ router.post('/sms/payment', async (req, res) => {
 });
 
 module.exports = router;
-//use the
+//use the till
