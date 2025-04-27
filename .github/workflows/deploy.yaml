@@ -27,7 +27,7 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      # Step 4: Build the Docker image
+      # Step 4: Build the Docker imag
       - name: Build Docker image
         run: docker build -f Dockerfile -t vidura12/deliveroo:notification-service-latest 
 
