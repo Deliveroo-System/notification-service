@@ -5,7 +5,7 @@ const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 
-// Enable CORS
+
 app.use(cors()); // Allow all origins by default
 
 app.use(bodyParser.json());
