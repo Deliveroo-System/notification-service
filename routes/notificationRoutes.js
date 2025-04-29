@@ -6,7 +6,7 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
-// Reusable function
+
 const sendSMS = async (to, body, res) => {
     try {
         const msg = await client.messages.create({
@@ -21,7 +21,7 @@ const sendSMS = async (to, body, res) => {
     }
 };
 
-// ✅ Order Assigned
+
 router.post('/sms/assigned', async (req, res) => {
     const { to } = req.body;
     if (!to) return res.status(400).json({ error: 'Phone number is required.' });
@@ -30,7 +30,7 @@ router.post('/sms/assigned', async (req, res) => {
     sendSMS(to, message, res);
 });
 
-// ✅ Order Accepted
+
 router.post('/sms/accepted', async (req, res) => {
     const { to } = req.body;
     if (!to) return res.status(400).json({ error: 'Phone number is required.' });
@@ -39,7 +39,7 @@ router.post('/sms/accepted', async (req, res) => {
     sendSMS(to, message, res);
 });
 
-// ✅ Payment Successful
+
 router.post('/sms/payment', async (req, res) => {
     const { to } = req.body;
     if (!to) return res.status(400).json({ error: 'Phone number is required.' });
