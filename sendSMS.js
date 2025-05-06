@@ -7,8 +7,8 @@ const client = require('twilio')(accountSid, authToken);
 
 const sendSMS = async (body) => {
     let msgOptions = {
-        from: process.env.TWILIO_PHONE_NUMBER, 
-        to: process.env.TO_NUMBER,             
+        from: process.env.TWILIO_PHONE_NUMBER, // Your Twilio number
+        to: process.env.TO_NUMBER,             // Recipient number in +947... format
         body
     };
     try {
